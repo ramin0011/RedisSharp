@@ -1,6 +1,6 @@
 # RedisSharp
 RedisSharp is C# library to use redis database not only for as a cach database 
-so all data TTL is set to -1 unless you use stackexchange APIs itself (which is possible)
+so all data TTL is set to -1 unless you use stackexchange APIs itself (which is possible from RedisSharp)
 
 benefits:
 1. access the same benefits from stackexchange or stackexchange.extentions
