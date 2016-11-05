@@ -8,7 +8,7 @@ benefits:
 3. get the last saved items as the first items (like using in feeds) 
 
 
-#How?
+#How it works
 install from nuget 
 
     Install-Package RedisSharp
