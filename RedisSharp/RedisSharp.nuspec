@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>ramin mh</authors>
+    <owners>ramin mh</owners>
+    <!--<licenseUrl>https://github.com/ramin0011/RedisSharp</licenseUrl>-->
+    <projectUrl>https://github.com/ramin0011/RedisSharp</projectUrl>
+    <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>redis nosql database library</description>
+    <releaseNotes>first release</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Redis nosql redisc#</tags>
+  </metadata>
+</package>
