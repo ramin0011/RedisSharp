@@ -13,7 +13,7 @@ benefits:
 just use IRedis intefrace
 and tell us how you make your redisKey in the constructor
 
-public class Employee:IRedis
+   public class Employee:IRedis
     {
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
@@ -29,7 +29,7 @@ public class Employee:IRedis
     }
     
 use this command to save an obj
-new DatabaseHelper.InsertSet<Employee>(redisSetKey, new Employee() { Name = "John Joe", Id =i });
+    new DatabaseHelper.InsertSet<Employee>(redisSetKey, new Employee() { Name = "John Joe", Id =i });
 the RedisEntityType is set to string by default and you can change it to sortedset ,if so RedisScore is set automatically when you save 
 your object .
 
