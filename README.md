@@ -9,6 +9,9 @@ benefits:
 
 
 #How?
+install from nuget 
+
+    Install-Package RedisSharp
 
 inherit from IRedis which is:
 
