@@ -1,5 +1,6 @@
 # RedisSharp
-RedisSharp is a C# library to use redis database not only as a cach database 
+RedisSharp is a C# library to use redis database not only as a cach database and also makes it easier to work with redis value types(sets ,sortedsset etc),
+RedisSharp uses [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) and [StackExchange.Redis.Extensions](https://github.com/imperugo/StackExchange.Redis.Extensions) ,
 so all data TTLs are set to -1 unless you use stackexchange APIs itself to change them(which is possible from RedisSharp)
 
 benefits:
