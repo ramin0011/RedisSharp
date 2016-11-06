@@ -1,17 +1,27 @@
 # RedisSharp
-RedisSharp is C# library to use redis database not only for as a cach database 
-so all data TTL is set to -1 unless you use stackexchange APIs itself (which is possible from RedisSharp)
+RedisSharp is a C# library to use redis database not only as a cach database 
+so all data TTLs are set to -1 unless you use stackexchange APIs itself to change them(which is possible from RedisSharp)
 
 benefits:
 1. access the same benefits from stackexchange or stackexchange.extentions
 2. save your data in sorted sets or sorts or string types 
-3. get the last saved items as the first items (like using in feeds) 
-
+3. get the last saved items as the first retreiving items in sortedLists (like using in feeds) 
 
 #How it works
 install from nuget 
 
     Install-Package RedisSharp
+    
+add these lines to your web or app.config
+
+      <configSections>
+        <section name="redisCacheClient" type="StackExchange.Redis.Extensions.Core.Configuration.RedisCachingSectionHandler, StackExchange.Redis.Extensions.Core"/>
+      </configSections>
+      <redisCacheClient allowAdmin="true" ssl="false" connectTimeout="5000">
+            <hosts>
+                 <add host="127.0.0.1" cachePort="6379"/>
+            </hosts>
+      </redisCacheClient>
 
 inherit from IRedis which is:
 
@@ -40,7 +50,7 @@ your object .
         public string RedisKey { get; set; }
         public string MakeRedisKey(string param1, string param2 = null, string param3 = null)
         {
-            return "Employees:";
+            return "Employees";
         }
      }
     
