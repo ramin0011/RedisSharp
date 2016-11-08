@@ -60,7 +60,7 @@ if you wanted to uset StackExchange just call DatabseHelper.StackExchangeRedisCa
 
 use this command to save an obj 
     
-    var savedData = new DatabaseHelper.InsertSet<Employee>(redisSetKey, new Employee() { Name = "John Joe", Id =i });
+    var savedData = new DatabaseHelper.Save<Employee>( new Employee() { Name = "John Joe", Id =i });
     
  2.strings
  in string mode an object is converted to a json string and will be deserialized from string to your class type thanx newtonsoft and stackexchange.extention
@@ -107,7 +107,7 @@ key would be 'Index:*'
        for (int i = 0; i < 20; i++)
                 {
                     var obj=  DatabaseHelper.Save<Employee_StringType>(new Employee_StringType("Jack " + i * 5));
-                    DatabaseHelper.Save<RedisIndexes>(RedisIndexes.CreateNewIntance(redisIndexPartitionKey,           obj.RedisKey),redisIndexPartitionKey);
+            DatabaseHelper.Save<RedisIndexes(RedisIndexes.CreateNewIntance(redisIndexPartitionKey,obj.RedisKey),redisIndexPartitionKey);
                 }
 
 
