@@ -7,6 +7,7 @@ benefits:
 1. access the same benefits from stackexchange or stackexchange.extentions
 2. save your data in sorted sets or sorts or string types 
 3. get the last saved items as the first retreiving items in sortedLists (like using in feeds meaning the first items you get are the recent saved items) 
+4.index your string type objects
 
 #How it works
 install from nuget 
