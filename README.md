@@ -61,8 +61,8 @@ use this command to save an obj
     
     var savedData = new DatabaseHelper.Save<Employee>( new Employee() { Name = "John Joe", Id =i });
     
- 2.strings
- in string mode an object is converted to a json string and will be deserialized from string to your class type thanx newtonsoft and stackexchange.extention
+ 2.strings types : 
+ a string type object is converted to a json string and will be deserialized from string to your c# class type thanx to newtonsoft and stackexchange.extention
  
  this is another sample for string types
  
