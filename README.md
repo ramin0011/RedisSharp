@@ -24,7 +24,7 @@ add these lines to your web or app.config
             </hosts>
       </redisCacheClient>
 
-inherit from IRedis which is:
+your models should inherit from IRedis which is:
 
     public interface IRedis
     {
@@ -55,7 +55,9 @@ your object .
         }
      }
     
- 
+create an DatabaseHelper object and start using Redis
+if you wanted to uset StackExchange just call DatabseHelper.StackExchangeRedisCacheClient
+
 use this command to save an obj 
     
     var savedData = new DatabaseHelper.InsertSet<Employee>(redisSetKey, new Employee() { Name = "John Joe", Id =i });
