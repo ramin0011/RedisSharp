@@ -6,7 +6,7 @@ so all data TTLs are set to -1 unless you use stackexchange APIs itself to chang
 benefits:
 1. access the same benefits from stackexchange or stackexchange.extentions
 2. save your data in sorted sets or sorts or string types 
-3. get the last saved items as the first retreiving items in sortedLists (like using in feeds) 
+3. get the last saved items as the first retreiving items in sortedLists (like using in feeds meaning the first items you get are the recent saved items) 
 
 #How it works
 install from nuget 
@@ -92,5 +92,31 @@ use this command to save an obj
         }
      }
  
+#loading data
+ you can load data with 'Query' and 'Load' methods to load an item or bunch of items
 
-check tests for more info
+#indexing
+this is diffrent with indexing , its just a way to index your rediskeys of string types models in a sorted set so you can retireive them 
+in sorted by order they are listed , meaning the first items you get are the recent saved items
+you can index your keys in a sorted set with RedisIndexes class , so no need to create another model , but consider that the index
+key would be 'Index:*'
+      
+      
+       for (int i = 0; i < 20; i++)
+                {
+                    var obj=  DatabaseHelper.Save<Employee_StringType>(new Employee_StringType("Jack " + i * 5));
+                    DatabaseHelper.Save<RedisIndexes>(RedisIndexes.CreateNewIntance(redisIndexPartitionKey,           obj.RedisKey),redisIndexPartitionKey);
+                }
+
+
+   and you can retrieve items from indexes
+   
+         
+         var result=new List<Employee_StringType>();
+            var indexedItems = DatabaseHelper.Query<RedisIndexes>(redisIndexPartitionKey);
+            foreach (var index in indexedItems)
+            {
+                result.Add(DatabaseHelper.Load<Employee_StringType>(index.Value));
+            }
+            
+ check tests for more info
